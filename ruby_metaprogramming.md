@@ -15,7 +15,7 @@ walk up to a language construct and ask it questions about itself. This is
 called introspection.
 
 ## Introspection: Get Instance Variables and Methods:
-```
+```ruby
 class Greeting
   def initialize(text)
     @text = text
@@ -47,7 +47,7 @@ Greeting.ancestors # => [Greeting, Object, Kernel, BasicObject]
 ## Open Class
 Reopen an existing class and add methods to it.
 
-```
+```ruby
 class D
   def x; 'x'; end
 end
@@ -63,7 +63,7 @@ obj.y # => "y"
 ```
 
 
-```
+```ruby
 # Money Gem
 # object_model/money_example.rb
 
@@ -80,7 +80,7 @@ standard_price.format # => "$100.00"
 
 ## Monkey Patch
 
-```
+```ruby
 # This is the dark side to Open Classes: if you casually add bits and pieces of functionality to classes, you can end up with bugs like overriding. Some people would frown upon this kind of reckless patching of classes, and they would refer to the previous code with a derogatory name: they’d call it a Monkeypatch.
 
 class Array
@@ -103,7 +103,7 @@ A class is a module with three additional instance methods ( new , allocate , an
 
 ## Modules and Lookup
 
-```
+```ruby
 # object_model/modules_include.rb
 
 module M1
@@ -122,7 +122,7 @@ D.ancestors # => [D, C, M1, Object, Kernel, BasicObject]
 ```
 
 ## Ruby Refinements
-```
+```ruby
 # object_model/refinements_in_file.rb
 
 module StringExtensions
@@ -137,7 +137,7 @@ end
 To activate the changes, you have to do so explicitly, with the using method:
 ```using StringExtensions```
 
-```
+```ruby
 # Starting from Ruby 2.1, you can even call using inside a module definition
 
 module StringStuff
@@ -152,7 +152,7 @@ Points to note:
 * Refinements have the potential to eliminate dangerous Monkeypatches, but it will take some time for the Ruby community to understand how to use them best.
 
 Include/Prepend - Order of execution
-```
+```ruby
 module Printable
   def print
     puts 'print from Printable'
